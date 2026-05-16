@@ -173,22 +173,6 @@ http://127.0.0.1:8000/summarize?text=Artificial%20Intelligence%20is%20a%20field.
 
 ---
 
-## Future Improvements
-
-- PDF summarizer
-- File upload support
-- Copy summary button
-- Authentication system
-- PostgreSQL database
-- Summary history
-- AI chat mode
-- Streaming responses
-- Mobile responsive optimization
-- Docker deployment
-- Railway deployment
-
----
-
 ## Dependencies
 
 ```txt
