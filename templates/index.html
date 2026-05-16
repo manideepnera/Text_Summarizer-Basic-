@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>AI Text Summarizer</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>AI Text Summarizer</h1>
+
+        <textarea
+            id="inputText"
+            placeholder="Paste your text here..."
+        ></textarea>
+
+        <button onclick="summarizeText()">
+            Summarize
+        </button>
+
+        <div class="output">
+            <h2>Summary</h2>
+
+            <p id="result">
+                Your summarized text will appear here...
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+
+        async function summarizeText() {
+
+            const text = document.getElementById("inputText").value;
+
+            const result = document.getElementById("result");
+
+            result.innerText = "Generating summary...";
+
+            try {
+
+                const response = await fetch(
+                    `/summarize?text=${encodeURIComponent(text)}`
+                );
+
+                const data = await response.json();
+
+                result.innerText = data.summary;
+
+            } catch (error) {
+
+                result.innerText = "Something went wrong.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
